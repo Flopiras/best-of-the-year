@@ -37,6 +37,17 @@ public class MainController {
 		return "movies";
 	}
 	
+	@GetMapping("/songs")
+	public String pageSongs(Model model) {
+		setBestSongs();	
+		
+		List<Song> songs = getBestSongs();
+		
+		model.addAttribute("songs", songs);
+		
+		return "songs";
+	}
+	
 	//methods
 	private void setBestMovies() {
 		
