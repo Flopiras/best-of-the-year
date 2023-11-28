@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<h2>Best Movies</h2>
+    
+    <ul>
+        <li th:each="movie : ${movies}">
+            <span th:text="${movie.title}"></span>
+        </li>
+    </ul>
+    
+</body>
+</html>

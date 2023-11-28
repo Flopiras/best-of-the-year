@@ -26,6 +26,17 @@ public class MainController {
 		return "page1";
 	}
 	
+	@GetMapping("/movies")
+	public String pageMovies(Model model) {
+		setBestMovies();	
+		
+		List<Movie> movies = getBestMovies();
+		
+		model.addAttribute("movies", movies);
+		
+		return "movies";
+	}
+	
 	//methods
 	private void setBestMovies() {
 		
