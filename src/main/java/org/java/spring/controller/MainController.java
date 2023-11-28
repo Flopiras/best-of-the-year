@@ -8,6 +8,7 @@ import org.java.spring.pojo.Song;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class MainController {
@@ -48,6 +49,18 @@ public class MainController {
 		return "songs";
 	}
 	
+	@GetMapping("/movies/{id}") 
+	public String movieDetail(Model model,
+			@PathVariable int id) {
+		
+		Movie m = getMovieFromList(id);
+		
+		model.addAttribute("id", id);
+		model.addAttribute("title", m != null ? m.getTitle() : "Movie not found!");
+		
+		return "movieDetail";
+	}
+	
 	//methods
 	private void setBestMovies() {
 		
@@ -86,6 +99,20 @@ public class MainController {
 	private List<Song> getBestSongs() {
 		
 		return bestSongs;
+	}
+	
+	private Movie getMovieFromList(int id) {
+		
+		setBestMovies();	
+		
+		List<Movie> bestMovies = getBestMovies();
+		
+	    for (Movie movie : bestMovies) {
+	        if (movie.getId() == id) {
+	            return movie;
+	        }
+	    }
+	    return null;
 	}
 
 }
