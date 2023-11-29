@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="ISO-8859-1">
+	<meta charset="ISO-8859-1">
 
-<!-- Bootstrap CSS -->
-<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css}"/>
+	<!-- Bootstrap CSS -->
+	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css}" />
 
-<title>Insert title here</title>
+	<html xmlns:th="http://www.thymeleaf.org">
+
+	<title>Insert title here</title>
 </head>
+
 <body style="background-color: brown; color: burlywood;">
-	<h1 class="text-center mt-4" style="color: burlywood;">Best of the year by [[${username}]]</h1>
+
+	<div class="container">
+
+		<h1 class="text-center mt-4" style="color: burlywood;">Best of the year by [[${username}]]</h1>
+
+		<div class="d-flex justify-content-center mt-4">
+
+			<!-- movies' button -->
+			<a th:href="@{/movies}" class="btn btn-success me-4">Movies</a>
+
+			<!-- song' button -->
+			<a th:href="@{/songs}" class="btn btn-success ms-4">Songs</a>
+		</div>
+	</div>
 </body>
+
 </html>
