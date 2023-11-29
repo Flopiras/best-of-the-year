@@ -21,7 +21,9 @@
     
     <ul>
         <li th:each="song : ${songs}">
-            <span th:text="${song.title}"></span>
+			
+			<a th:replace="fragments :: link(@{/songs/{id}(id = ${song.id})} , ${song.title})"></a>
+		<!--<span th:text="${song.title}"></span>-->
         </li>
     </ul>
 	

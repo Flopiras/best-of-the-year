@@ -23,7 +23,9 @@
 
 		<ul>
 			<li th:each="movie : ${movies}">
-				<span th:text="${movie.title}"></span>
+				
+				<a th:replace="fragments :: link(@{/movies/{id}(id = ${movie.id})}, ${movie.title})"></a>
+				<!--<span th:text="${movie.title}"></span>-->
 			</li>
 		</ul>
 
