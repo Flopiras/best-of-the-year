@@ -2,15 +2,22 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+
+<!-- Bootstrap CSS -->
+	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css}" />
+	
 <title>Insert title here</title>
 </head>
 <body style="background-color: brown; color: burlywood;">
 	
-	<h1 style="color: burlywood;">Song Detail</h1>
+	<div class="container">
+		
+	<h1 style="color: burlywood;" class="text-center my-4">Song Detail</h1>
 	
 	<p>Song id: <span style="font-weight: bolder;">[[${id}]]</span> </p>
 	
 	<p>Song title: <span style="font-weight: bolder;">[[${title}]]</span></p>
 
+	</div>
 </body>
 </html>
