@@ -14,9 +14,14 @@
 		
 	<h1 style="color: burlywood;" class="text-center my-4">Song Detail</h1>
 	
-	<p>Song id: <span style="font-weight: bolder;">[[${id}]]</span> </p>
+	<!-- home' button -->
+	<div class="d-flex justify-content-center mb-4">
+			<a th:href="@{/}" class="btn btn-success me-4">Home</a>
+	</div>
 	
-	<p>Song title: <span style="font-weight: bolder;">[[${title}]]</span></p>
+	<p>Song id: <span style="font-weight: bolder;">[[${song.id}]]</span> </p>
+	
+	<p>Song title: <span style="font-weight: bolder;">[[${song.title}]]</span></p>
 
 	</div>
 </body>

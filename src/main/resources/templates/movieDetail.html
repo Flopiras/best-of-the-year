@@ -12,12 +12,16 @@
 	
 	<div class="container">
 		
-	
 	<h1 style="color: burlywood;" class="text-center my-4">Movie Detail</h1>
 	
-	<p>Movie id: <span style="font-weight: bolder;">[[${id}]]</span> </p>
+	<!-- home' button -->
+	<div class="d-flex justify-content-center mb-4">
+			<a th:href="@{/}" class="btn btn-success me-4">Home</a>
+	</div>
 	
-	<p>Movie title: <span style="font-weight: bolder;">[[${title}]]</span></p>
+	<p>Movie id: <span style="font-weight: bolder;">[[${movie.id}]]</span> </p>
+	
+	<p>Movie title: <span style="font-weight: bolder;">[[${movie.title}]]</span></p>
 
 	</div>
 </body>

@@ -54,7 +54,7 @@ public class MainController {
 		Movie m = getMovieFromList(id);
 
 		model.addAttribute("id", id);
-		model.addAttribute("title", m != null ? m.getTitle() : "Movie not found!");
+		model.addAttribute("movie", m != null ? m : "Movie not found!");
 
 		return "movieDetail";
 	}
@@ -62,10 +62,10 @@ public class MainController {
 	@GetMapping("/songs/{id}")
 	public String songDetail(Model model, @PathVariable int id) {
 
-		Song m = getSongFromList(id);
+		Song s = getSongFromList(id);
 
 		model.addAttribute("id", id);
-		model.addAttribute("title", m != null ? m.getTitle() : "Song not found!");
+		model.addAttribute("song", s != null ? s : "Song not found!");
 
 		return "songDetail";
 	}
